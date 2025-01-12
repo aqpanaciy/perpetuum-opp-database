@@ -4,7 +4,15 @@ GO
 
 ---- Add new ores
 
----- Deeptanium (no use)
+---- Dummy entity to be immediately deleted so that resources match eds
+
+IF NOT EXISTS (SELECT 1 FROM entitydefaults WHERE definitionname = 'def_absolutely_dummy_thing')
+BEGIN
+	INSERT INTO entitydefaults (definitionname, quantity, attributeflags, categoryflags, options, note, enabled, volume, mass, hidden, health, descriptiontoken, purchasable, tiertype, tierlevel) VALUES
+	('def_absolutely_dummy_thing', 1, 2048, 1685, '', '', 0, 0.1, 0.1, 1, 100, 'def_geoscan_document_desc', 0, NULL, NULL)
+END
+
+DELETE FROM entitydefaults WHERE definitionname = 'def_absolutely_dummy_thing'
 
 -- Geoscan document definition
 
