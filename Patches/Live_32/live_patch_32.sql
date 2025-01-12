@@ -5316,73 +5316,6 @@ INSERT INTO components (definition, componentdefinition, componentamount) VALUES
 
 GO
 
-PRINT N'07_Create_Index_Maintenance_Procedure.sql';
-
-CREATE PROCEDURE dbo.indexesMaintenance
-AS
-BEGIN
-
-	SET NOCOUNT ON
-
-	CREATE TABLE #Fragmentation 
-	(
-		TableName NVARCHAR(200),
-		IndexName NVARCHAR(200),
-		FragmentationAmount DECIMAL(18,4)
-	)
-
-	-- Load all of the fragmented tables
-	INSERT INTO #Fragmentation (TableName, IndexName, FragmentationAmount)
-		SELECT  DISTINCT 
-			TableName = S.name + '.' + tbl.[name],
-			IndexName = ind.name,
-			FragmentationAmount = MAX(mn.avg_fragmentation_in_percent)
-		FROM sys.dm_db_index_physical_stats(NULL, NULL, NULL, NULL, NULL) AS mn
-			INNER JOIN sys.tables tbl ON tbl.[object_id] = mn.[object_id]
-			INNER JOIN sys.indexes ind ON ind.[object_id] = mn.[object_id]
-			INNER JOIN sys.schemas S ON tbl.schema_id = S.schema_id
-		WHERE [database_id] = DB_ID() AND
-			mn.avg_fragmentation_in_percent > 5 AND
-			ind.type_desc <> 'NONCLUSTERED COLUMNSTORE' AND
-			ind.name IS NOT NULL
-		GROUP BY S.name + '.' + tbl.[name], ind.name
-		ORDER BY MAX(mn.avg_fragmentation_in_percent) DESC
-
-	DECLARE @tableName NVARCHAR(200)
-	DECLARE @indexName NVARCHAR(200)
-	DECLARE @fragmentationAmount DECIMAL(18,4)
-	DECLARE @sql VARCHAR(1000)
-
-	DECLARE curse CURSOR FAST_FORWARD READ_ONLY FOR
-		SELECT TableName, IndexName, FragmentationAmount FROM #Fragmentation
-
-	OPEN curse
-
-	FETCH NEXT FROM curse INTO @tableName, @indexName, @fragmentationAmount
-
-	WHILE @@FETCH_STATUS = 0
-	BEGIN
-		SET @sql = 'ALTER INDEX ' + @IndexName + ' ON ' + @TableName + CASE WHEN @FragmentationAmount > 30 THEN ' REBUILD' ELSE ' REORGANIZE' END
-
-		PRINT @sql
-		EXEC(@sql)
-
-		FETCH NEXT FROM curse INTO @tableName, @indexName, @fragmentationAmount
-	END
-
-	CLOSE curse
-	DEALLOCATE curse
-
-	DROP TABLE #Fragmentation
-
-END
-
-GO
-
-EXEC dbo.indexesMaintenance
-
-GO
-
 PRINT N'08_Spectator_Revamp.sql';
 
 ---- Nerf Spectator base stats
@@ -19149,6 +19082,199 @@ WHERE np.name IN (
 'roamer_cultists_z1')
 
 UPDATE npcinterzonegroup SET respawnTime = 10800 WHERE NAME = 'alpha3_cultist_preachers_izgroup'
+
+GO
+
+PRINT N'12_32p1_Fix_RCM.sql';
+
+DECLARE @prototypeId INT
+DECLARE @itemId INT
+
+-- T2
+
+-- Assault
+
+SET @prototypeId = (SELECT TOP 1 definition FROM entitydefaults WHERE definitionname = 'def_named1_assault_remote_controller_pr')
+
+UPDATE entitydefaults SET tiertype = 2 WHERE definition = @prototypeId
+
+-- Industrial
+
+SET @prototypeId = (SELECT TOP 1 definition FROM entitydefaults WHERE definitionname = 'def_named1_industrial_remote_controller_pr')
+SET @itemId = (SELECT TOP 1 definition FROM entitydefaults WHERE definitionname = 'def_named1_industrial_remote_controller')
+
+DELETE FROM prototypes WHERE definition = @itemId OR prototype = @prototypeId
+INSERT INTO prototypes (definition, prototype) VALUES (@itemId, @prototypeId)
+
+UPDATE entitydefaults SET tiertype = 2 WHERE definition = @prototypeId
+
+-- Support
+
+SET @prototypeId = (SELECT TOP 1 definition FROM entitydefaults WHERE definitionname = 'def_named1_support_remote_controller_pr')
+SET @itemId = (SELECT TOP 1 definition FROM entitydefaults WHERE definitionname = 'def_named1_support_remote_controller')
+
+DELETE FROM prototypes WHERE definition = @itemId OR prototype = @prototypeId
+INSERT INTO prototypes (definition, prototype) VALUES (@itemId, @prototypeId)
+
+UPDATE entitydefaults SET tiertype = 2 WHERE definition = @prototypeId
+
+-- Tactical
+
+SET @prototypeId = (SELECT TOP 1 definition FROM entitydefaults WHERE definitionname = 'def_named1_tactical_remote_controller_pr')
+SET @itemId = (SELECT TOP 1 definition FROM entitydefaults WHERE definitionname = 'def_named1_tactical_remote_controller')
+
+DELETE FROM prototypes WHERE definition = @itemId OR prototype = @prototypeId
+INSERT INTO prototypes (definition, prototype) VALUES (@itemId, @prototypeId)
+
+UPDATE entitydefaults SET tiertype = 2 WHERE definition = @prototypeId
+
+-- T3
+
+-- Assault
+
+SET @prototypeId = (SELECT TOP 1 definition FROM entitydefaults WHERE definitionname = 'def_named2_assault_remote_controller_pr')
+
+UPDATE entitydefaults SET tiertype = 2 WHERE definition = @prototypeId
+
+-- Industrial
+
+SET @prototypeId = (SELECT TOP 1 definition FROM entitydefaults WHERE definitionname = 'def_named2_industrial_remote_controller_pr')
+SET @itemId = (SELECT TOP 1 definition FROM entitydefaults WHERE definitionname = 'def_named2_industrial_remote_controller')
+
+DELETE FROM prototypes WHERE definition = @itemId OR prototype = @prototypeId
+INSERT INTO prototypes (definition, prototype) VALUES (@itemId, @prototypeId)
+
+UPDATE entitydefaults SET tiertype = 2 WHERE definition = @prototypeId
+
+-- Support
+
+SET @prototypeId = (SELECT TOP 1 definition FROM entitydefaults WHERE definitionname = 'def_named2_support_remote_controller_pr')
+SET @itemId = (SELECT TOP 1 definition FROM entitydefaults WHERE definitionname = 'def_named2_support_remote_controller')
+
+DELETE FROM prototypes WHERE definition = @itemId OR prototype = @prototypeId
+INSERT INTO prototypes (definition, prototype) VALUES (@itemId, @prototypeId)
+
+UPDATE entitydefaults SET tiertype = 2 WHERE definition = @prototypeId
+
+-- Tactical
+
+SET @prototypeId = (SELECT TOP 1 definition FROM entitydefaults WHERE definitionname = 'def_named2_tactical_remote_controller_pr')
+SET @itemId = (SELECT TOP 1 definition FROM entitydefaults WHERE definitionname = 'def_named2_tactical_remote_controller')
+
+DELETE FROM prototypes WHERE definition = @itemId OR prototype = @prototypeId
+INSERT INTO prototypes (definition, prototype) VALUES (@itemId, @prototypeId)
+
+UPDATE entitydefaults SET tiertype = 2 WHERE definition = @prototypeId
+
+-- T4
+
+-- Assault
+
+SET @prototypeId = (SELECT TOP 1 definition FROM entitydefaults WHERE definitionname = 'def_named3_assault_remote_controller_pr')
+
+UPDATE entitydefaults SET tiertype = 2 WHERE definition = @prototypeId
+
+-- Industrial
+
+SET @prototypeId = (SELECT TOP 1 definition FROM entitydefaults WHERE definitionname = 'def_named3_industrial_remote_controller_pr')
+SET @itemId = (SELECT TOP 1 definition FROM entitydefaults WHERE definitionname = 'def_named3_industrial_remote_controller')
+
+DELETE FROM prototypes WHERE definition = @itemId OR prototype = @prototypeId
+INSERT INTO prototypes (definition, prototype) VALUES (@itemId, @prototypeId)
+
+UPDATE entitydefaults SET tiertype = 2 WHERE definition = @prototypeId
+
+-- Support
+
+SET @prototypeId = (SELECT TOP 1 definition FROM entitydefaults WHERE definitionname = 'def_named3_support_remote_controller_pr')
+SET @itemId = (SELECT TOP 1 definition FROM entitydefaults WHERE definitionname = 'def_named3_support_remote_controller')
+
+DELETE FROM prototypes WHERE definition = @itemId OR prototype = @prototypeId
+INSERT INTO prototypes (definition, prototype) VALUES (@itemId, @prototypeId)
+
+UPDATE entitydefaults SET tiertype = 2 WHERE definition = @prototypeId
+
+-- Tactical
+
+SET @prototypeId = (SELECT TOP 1 definition FROM entitydefaults WHERE definitionname = 'def_named3_tactical_remote_controller_pr')
+SET @itemId = (SELECT TOP 1 definition FROM entitydefaults WHERE definitionname = 'def_named3_tactical_remote_controller')
+
+DELETE FROM prototypes WHERE definition = @itemId OR prototype = @prototypeId
+INSERT INTO prototypes (definition, prototype) VALUES (@itemId, @prototypeId)
+
+UPDATE entitydefaults SET tiertype = 2 WHERE definition = @prototypeId
+
+GO
+
+-- Remove tiers from ammo CT
+
+DECLARE @itemId INT
+
+--
+
+SET @itemId = (SELECT TOP 1 definition FROM entitydefaults WHERE definitionname = 'def_syndicate_assault_drone_unit_cprg')
+
+UPDATE entitydefaults SET tiertype = NULL, tierlevel = NULL WHERE definition = @itemId
+
+--
+
+SET @itemId = (SELECT TOP 1 definition FROM entitydefaults WHERE definitionname = 'def_syndicate_attack_drone_unit_cprg')
+
+UPDATE entitydefaults SET tiertype = NULL, tierlevel = NULL WHERE definition = @itemId
+
+--
+
+SET @itemId = (SELECT TOP 1 definition FROM entitydefaults WHERE definitionname = 'def_mining_industrial_drone_unit_cprg')
+
+UPDATE entitydefaults SET tiertype = NULL, tierlevel = NULL WHERE definition = @itemId
+
+--
+
+SET @itemId = (SELECT TOP 1 definition FROM entitydefaults WHERE definitionname = 'def_harvesting_industrial_drone_unit_cprg')
+
+UPDATE entitydefaults SET tiertype = NULL, tierlevel = NULL WHERE definition = @itemId
+
+--
+
+SET @itemId = (SELECT TOP 1 definition FROM entitydefaults WHERE definitionname = 'def_repair_support_drone_unit_cprg')
+
+UPDATE entitydefaults SET tiertype = NULL, tierlevel = NULL WHERE definition = @itemId
+
+--
+
+SET @itemId = (SELECT TOP 1 definition FROM entitydefaults WHERE definitionname = 'def_nuimqol_assault_drone_unit_cprg')
+
+UPDATE entitydefaults SET tiertype = NULL, tierlevel = NULL WHERE definition = @itemId
+
+--
+
+SET @itemId = (SELECT TOP 1 definition FROM entitydefaults WHERE definitionname = 'def_nuimqol_attack_drone_unit_cprg')
+
+UPDATE entitydefaults SET tiertype = NULL, tierlevel = NULL WHERE definition = @itemId
+
+--
+
+SET @itemId = (SELECT TOP 1 definition FROM entitydefaults WHERE definitionname = 'def_pelistal_assault_drone_unit_cprg')
+
+UPDATE entitydefaults SET tiertype = NULL, tierlevel = NULL WHERE definition = @itemId
+
+--
+
+SET @itemId = (SELECT TOP 1 definition FROM entitydefaults WHERE definitionname = 'def_pelistal_attack_drone_unit_cprg')
+
+UPDATE entitydefaults SET tiertype = NULL, tierlevel = NULL WHERE definition = @itemId
+
+--
+
+SET @itemId = (SELECT TOP 1 definition FROM entitydefaults WHERE definitionname = 'def_thelodica_assault_drone_unit_cprg')
+
+UPDATE entitydefaults SET tiertype = NULL, tierlevel = NULL WHERE definition = @itemId
+
+--
+
+SET @itemId = (SELECT TOP 1 definition FROM entitydefaults WHERE definitionname = 'def_thelodica_attack_drone_unit_cprg')
+
+UPDATE entitydefaults SET tiertype = NULL, tierlevel = NULL WHERE definition = @itemId
 
 GO
 
