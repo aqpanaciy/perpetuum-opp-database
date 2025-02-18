@@ -3232,8 +3232,9 @@
 	"def_ammo_hell_cannon_d_pr": "Chemoactive hellcannon shell prototype",
 	"def_ammo_hell_cannon_d_cprg": "Chemoactive hellcannon shell CT",
 	"def_ammo_hell_cannon_d_desc": "This polynitrocol-based shell has the largest overall damage, with a significant range penalty.",
-	"def_ammo_hell_cannon_t_pr": "Chemoactive hellcannon shell prototype",
-	"def_ammo_hell_cannon_t_cprg": "Chemoactive hellcannon shell CT",
+	"def_ammo_hell_cannon_t": "'Machete' hellcannon shell",
+	"def_ammo_hell_cannon_t_pr": "'Machete' hellcannon shell prototype",
+	"def_ammo_hell_cannon_t_cprg": "'Machete' hellcannon shell CT",
 	"def_ammo_hell_cannon_t_desc": "This shell design was provided by the Syndicate to assist Agents with taming the wild growth of the Nian landscape.  It also seems to have similar degenerative effects on the Defensive Wall Units.",
 	
 	"def_ammo_raven_cannon_a": "Armor-piercing RAVEN gun shell",
@@ -3252,16 +3253,11 @@
 	"def_ammo_raven_cannon_d_pr": "Chemoactive RAVEN gun shell prototype",
 	"def_ammo_raven_cannon_d_cprg": "Chemoactive RAVEN gun shell CT",
 	"def_ammo_raven_cannon_d_desc": "This polynitrocol-based shell has the largest overall damage, with a significant range penalty.",
+	"def_ammo_raven_cannon_t": "'Machete' RAVEN gun shell",
 	"def_ammo_raven_cannon_t_pr": "'Machete' RAVEN gun shell prototype",
 	"def_ammo_raven_cannon_t_cprg": "'Machete' RAVEN gun shell CT",
 	"def_ammo_raven_cannon_t_desc": "This shell design was provided by the Syndicate to assist Agents with taming the wild growth of the Nian landscape.  It also seems to have similar degenerative effects on the Defensive Wall Units.",
 	
 	"core_usage_projectile_modifier": "Firearms accumulator consumption",
 	"core_usage_projectile_unit": "%",
-	
-	
-	
-	
-	
-	
 }
