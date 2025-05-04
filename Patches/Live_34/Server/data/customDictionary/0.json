@@ -3260,4 +3260,27 @@
 	
 	"core_usage_projectile_modifier": "Firearms accumulator consumption",
 	"core_usage_projectile_unit": "%",
+	
+	"cf_mobile_field_eccm_capsule": "Mobile field ECCM capsule",
+	"def_mobile_field_eccm_capsule": "Mobile field ECCM capsule",
+	"def_mobile_field_eccm_capsule_desc": "The Mobile field ECCM is a deployable device engineered to enhance battlefield targets management. When deployed, it emits a powerful signal field that boosts sensor strength for all robots within a 300-meter radius.\r\n\r\nHowever, this comes at a cost — units within the field experience reduced reactor stability, increasing the vulnerability against the EnWar attacks. Ideal for tactical operations where superior target tracking outweighs endurance, the Mobile field ECCM is a valuable asset for coordinated assaults and high-pressure engagements.\r\n\r\nUse with caution — clarity comes with a cost.",
+	"def_mobile_field_eccm": "Mobile field ECCM",
+	"def_mobile_field_eccm_desc": "The Mobile field ECCM is a deployable device engineered to enhance battlefield targets management. When deployed, it emits a powerful signal field that boosts sensor strength for all robots within a 300-meter radius.\r\n\r\nHowever, this comes at a cost — units within the field experience reduced reactor stability, increasing the vulnerability against the EnWar attacks. Ideal for tactical operations where superior target tracking outweighs endurance, the Mobile field ECCM is a valuable asset for coordinated assaults and high-pressure engagements.\r\n\r\nUse with caution — clarity comes with a cost.",
+	"effect_field_eccm": "Mobile field ECCM",
+	
+	"cf_mobile_field_reactor_stabilizer_capsule": "Field accumulator stabilizer capsule",
+	"def_mobile_field_reactor_stabilizer_capsule": "Field accumulator stabilizer capsule",
+	"def_mobile_field_reactor_stabilizer_capsule_desc": "The Mobile field accumulator stabilizer is a deployable support device designed to reinforce the internal systems of nearby robots. When deployed, it generates a stabilization field within a 300-meter radius, shielding the reactor and improving acumulator stability. This allows for prolonged use of energy-intensive modules under high-stress conditions.\r\n\r\nHowever, the same field dampens sensors, reducing the sensor strength of affected units. The Mobile field accumulator stabilizer is a strategic choice for drawn-out combat where sustainability takes precedence over targets management.\r\n\r\nBalance the trade-offs wisely — endurance comes at the price of perception.",
+	"def_mobile_field_reactor_stabilizer": "Field accumulator stabilizer",
+	"def_mobile_field_reactor_stabilizer_desc": "The Mobile field accumulator stabilizer is a deployable support device designed to reinforce the internal systems of nearby robots. When deployed, it generates a stabilization field within a 300-meter radius, shielding the reactor and improving acumulator stability. This allows for prolonged use of energy-intensive modules under high-stress conditions.\r\n\r\nHowever, the same field dampens sensors, reducing the sensor strength of affected units. The Mobile field accumulator stabilizer is a strategic choice for drawn-out combat where sustainability takes precedence over targets management.\r\n\r\nBalance the trade-offs wisely — endurance comes at the price of perception.",
+	"effect_field_reactor_stabilizer": "Mobile field accumulator stabilizer",
+	
+	"Aggregate_unknown_758": "Sensor strength modification",
+	"effect_field_sensor_strength_modifier": "Sensor strength modification",
+	"effect_field_sensor_strength_modifier_unit": "Hw³",
+	"Aggregate_unknown_759": "Accumulator stability modification",
+	"effect_field_reactor_radiation_modifier": "Accumulator stability modification",
+	"effect_field_reactor_radiation_modifier_unit": "%",
 }
+
+
