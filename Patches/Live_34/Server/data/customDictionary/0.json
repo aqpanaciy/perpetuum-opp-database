@@ -3281,6 +3281,12 @@
 	"Aggregate_unknown_759": "Accumulator stability modification",
 	"effect_field_reactor_radiation_modifier": "Accumulator stability modification",
 	"effect_field_reactor_radiation_modifier_unit": "%",
+	
+	"terrainoverview_filter_walkers": "Destroyers",
+	"terrainoverview_filter_command_robots": "Command robots",
+	"terrainoverview_filter_drones": "Drones",
+	
+	"ErrorMessages_unknown_681": "This module is not allowed on this robot",
 }
 
 
