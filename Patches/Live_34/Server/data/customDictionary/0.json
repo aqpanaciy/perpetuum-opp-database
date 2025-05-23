@@ -3287,6 +3287,22 @@
 	"terrainoverview_filter_drones": "Drones",
 	
 	"ErrorMessages_unknown_681": "This module is not allowed on this robot",
+	
+	"outpost_tm_1_exp1": "Fort Douglas Outpost",
+	"outpost_asi_2_exp1": "South Iseitsu Outpost",
+	"outpost_asi_1_exp1": "Laosura Outpost",
+	"outpost_tm_2_exp1": "Brightstone Outpost",
+	"outpost_ics_1_exp1": "New Crimea Outpost",
+	"outpost_ics_2_exp1": "Danarchov Outpost",
+	"asi_outpost_i_05": "Abbuthilia Outpost",
+	"asi_outpost_s_06": "Nauwy Outpost",
+	"asi_outpost_w_04": "Darmahol Outpost",
+	"tm_outpost_i_05": "Uria Outpost",
+	"tm_outpost_w_04": "Karapyth Outpost",
+	"tm_outpost_s_06": "Initia Outpost",
+	"ics_outpost_s_06": "Koykili Outpost",
+	"ics_outpost_i_05": "Heydelhorn Outpost",
+	"ics_outpost_w_04": "Moyar Outpost",
 }
 
 
