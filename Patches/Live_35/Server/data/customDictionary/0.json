@@ -3440,4 +3440,7 @@
 	"def_blob_emission_ammo_b_desc": "These deployable tactical emitters are used to cause [[Help:Interference|interference]] to robots on the terrain. When an emitter is deployed it discharges a signal that interferes with the nearby robots' sensors that can cause their sensors to work slower and with less sensor strength.\r\n\r\nLow frequency emitters have a relatively smaller interference measure but larger radius, compared to high frequency emitters.",
 	
 	"ext_production_max_cycles": "Factory: Intensive mass production",
+	
+	"cf_items": "Items",
+	"cf_gift_packages": "Alien Improbability Devices"
 }
