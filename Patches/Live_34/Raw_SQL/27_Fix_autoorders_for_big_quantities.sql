@@ -1,3 +1,4 @@
+
 USE [perpetuumsa]
 GO
 
@@ -138,3 +139,5 @@ BEGIN
         THROW;
     END CATCH
 END;
+
+GO

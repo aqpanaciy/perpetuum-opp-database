@@ -1,5 +1,5 @@
-USE perpetuumsa
 
+USE perpetuumsa
 GO
 
 ---- turn pre-created account 'devours@internet.ru' into admin account

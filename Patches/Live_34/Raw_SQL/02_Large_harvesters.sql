@@ -1,5 +1,5 @@
-USE perpetuumsa
 
+USE perpetuumsa
 GO
 
 ---- Create category flags for mass harvesting charges

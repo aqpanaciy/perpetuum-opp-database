@@ -1,5 +1,5 @@
-USE perpetuumsa;
 
+USE perpetuumsa;
 GO
 
 ---- Add or update items and amounts

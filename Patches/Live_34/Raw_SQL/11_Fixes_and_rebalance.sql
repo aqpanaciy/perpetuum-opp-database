@@ -1,3 +1,7 @@
+
+USE perpetuumsa;
+GO
+
 ---- Fix description for guns
 
 UPDATE entitydefaults SET descriptiontoken = 'def_hell_cannon_desc' WHERE definitionname = 'def_standard_hell_cannon'

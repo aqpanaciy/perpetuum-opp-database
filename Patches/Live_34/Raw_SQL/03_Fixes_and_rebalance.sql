@@ -1,3 +1,7 @@
+
+USE perpetuumsa;
+GO
+
 ---- Increase enabler extensions level for Spectator
 
 DECLARE @definition INT

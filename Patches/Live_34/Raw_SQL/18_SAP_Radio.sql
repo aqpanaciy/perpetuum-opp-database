@@ -1,4 +1,6 @@
+
 USE perpetuumsa;
+GO
 
 ---- Alter add isAnnouncement to the sap table
 BEGIN TRANSACTION

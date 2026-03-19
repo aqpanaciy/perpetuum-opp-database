@@ -1,5 +1,5 @@
-USE perpetuumsa;
 
+USE perpetuumsa;
 GO
 
 ---- Make presents purchasable
