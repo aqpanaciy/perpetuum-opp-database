@@ -12,6 +12,7 @@ GO
 
 DECLARE @marketeid BIGINT;
 DECLARE @vendoreid BIGINT;
+DECLARE @itemDefinition INT;
 
 SELECT @marketeid = eid 
 FROM entities 
@@ -20,6 +21,8 @@ WHERE ename = 'def_public_market_megacorp_TM_base_tm_pve';
 SELECT @vendoreid = vendorEID 
 FROM dbo.vendors 
 WHERE marketEID = @marketeid;
+
+SET @itemDefinition = (SELECT TOP (1) [definition] FROM [perpetuumsa].[dbo].[entitydefaults] WHERE [definitionname] = 'def_anniversary_package');
 
 INSERT INTO marketitems (marketeid, itemdefinition, submittereid, submitted, duration, isSell, price, quantity, usecorporationwallet, isvendoritem) VALUES
 (@marketeid, @itemDefinition, @vendoreid, getdate(), 0, 1, 40000000, -1, 0, 1)
