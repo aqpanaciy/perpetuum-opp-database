@@ -1,3 +1,7 @@
+
+USE perpetuumsa;
+GO
+
 ---- Shift tech tree to give space
 
 DECLARE @group INT

@@ -1,5 +1,5 @@
-USE perpetuumsa;
 
+USE perpetuumsa;
 GO
 
 ---- Create statistics table for plasma sold
@@ -580,3 +580,4 @@ DELETE FROM marketitems WHERE isvendoritem = 1 AND itemdefinition IN (
     3273,
     3274
 )
+GO

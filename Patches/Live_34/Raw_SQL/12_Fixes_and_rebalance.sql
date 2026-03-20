@@ -1,3 +1,7 @@
+
+USE perpetuumsa;
+GO
+
 ---- Fix large firearms CT tier
 
 UPDATE entitydefaults SET tierlevel = 2 WHERE definitionname = 'def_named1_raven_cannon_cprg'

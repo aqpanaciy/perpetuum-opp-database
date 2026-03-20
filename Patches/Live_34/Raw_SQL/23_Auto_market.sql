@@ -1,5 +1,5 @@
-USE perpetuumsa;
 
+USE perpetuumsa;
 GO
 
 ---- Create and fill raw material prices table

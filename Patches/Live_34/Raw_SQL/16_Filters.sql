@@ -1,5 +1,5 @@
-USE perpetuumsa
 
+USE perpetuumsa
 GO
 
 IF NOT EXISTS (SELECT 1 FROM categoryflags WHERE name = 'cf_drones' )

@@ -1,5 +1,5 @@
-USE perpetuumsa
 
+USE perpetuumsa
 GO
 
 ---- Boost black bots to proposed values
