@@ -18069,5 +18069,11 @@
 	"def_mission_p_s_simple_switch_03_a": "Интерактивный ориентир",
 	"def_ammo_large_lasercrystal_rewa_desc": "'''Этот тип боеприпасов нельзя изготовить или переработать, вы можете купить их только на [[Help:Syndicate_Supplies|Рынке Синдиката]] за жетоны.'''\r\n\r\nЭнергоячейка типа Апокалипсис была разработана для поражения вражеской брони всеми четырьмя типами урона.",
 	"cf_items": "Разное",
-	"cf_gift_packages": "Невероятные инопланетные устройства"
+	"cf_gift_packages": "Невероятные инопланетные устройства",
+	
+	"def_syndicate_forces_vektor_main_combat_bot": "Вектор сил Синдиката",
+	"def_syndicate_forces_vektor_main_combat_bot_name": "Новичок Синдиката",
+	
+	"def_syndicate_forces_argano_main_support_bot": "Аргано сил Синдиката",
+	"def_syndicate_forces_argano_main_support_bot_name": "Студент-медик Синдиката"
 }

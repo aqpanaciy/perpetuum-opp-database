@@ -3442,5 +3442,11 @@
 	"ext_production_max_cycles": "Factory: Intensive mass production",
 	
 	"cf_items": "Items",
-	"cf_gift_packages": "Alien Improbability Devices"
+	"cf_gift_packages": "Alien Improbability Devices",
+	
+	"def_syndicate_forces_vektor_main_combat_bot": "Syndicate Forces Vektor",
+	"def_syndicate_forces_vektor_main_combat_bot_name": "Syndicate Rookie",
+	
+	"def_syndicate_forces_argano_main_support_bot": "Syndicate Forces Argano",
+	"def_syndicate_forces_argano_main_support_bot_name": "Syndicate Medic Trainee"
 }
