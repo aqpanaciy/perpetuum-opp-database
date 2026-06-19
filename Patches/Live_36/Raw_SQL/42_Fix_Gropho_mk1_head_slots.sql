@@ -1,0 +1,1 @@
+UPDATE entitydefaults SET options = '#height=f0.2#slotFlags=48,8,8,8,8,8' WHERE definitionname = 'def_gropho_head'
