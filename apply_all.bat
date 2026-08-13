@@ -79,6 +79,9 @@ echo Patching complete
 :: It can be useful when you have multiple scripts you want to run with a single command
 if not "%~1" == "skip" pause
 
+:: Stop here, otherwise control falls into the function definitions below
+goto :eof
+
 :: Functions definition below this line
 :applyPatch
 :: Arguments:
