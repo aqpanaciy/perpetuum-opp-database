@@ -1,3 +1,8 @@
+-- 18_Hershfield_Syndicate_Forces.sql
+
+USE perpetuumsa;
+GO
+
 -- Perpetuum.AdminTool generated script
 -- Generated: 2026-05-07 04:46:41 UTC
 -- Author: devours@internet.ru
@@ -223,3 +228,5 @@ INSERT INTO npcflock (name, presenceid, flockmembercount, definition, spawnorigi
 ;
 
 COMMIT TRANSACTION;
+
+GO
