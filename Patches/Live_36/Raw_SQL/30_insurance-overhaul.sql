@@ -1,3 +1,6 @@
+USE [perpetuumsa]
+GO
+
 -- IMPROVEMENT-036: Insurance System Overhaul
 -- Apply once to the live database while the server is OFFLINE, before deploying the new build.
 -- Run in order: table → procedure → clear stale policies → initial price population.
@@ -53,9 +56,14 @@ BEGIN
     WHEN MATCHED THEN
         UPDATE SET t.fee = s.fee, t.payout = s.payout;
 END
+GO -- CRITICALLY IMPORTANT! This GO completely closes the procedure body.
+
+-- And these commands are now executed OUTSIDE, as a separate one-time initialization script:
 
 -- 3. Clear all stale insurance policies (payout values are outdated; players repurchase at new rates)
 DELETE FROM dbo.insurance;
+GO
 
 -- 4. Populate insuranceprices immediately so the server cache loads correct values on first startup
 EXEC dbo.usp_RecalculateInsurancePrices;
+GO
