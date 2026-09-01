@@ -1,3 +1,8 @@
+-- 19_Redefine_Syndicate_Forces_Vektor_stats.sql
+
+USE perpetuumsa;
+GO
+
 DECLARE @targetDefinition INT = (SELECT TOP 1 definition FROM entitydefaults WHERE definitionname = 'def_syndicate_forces_vektor_main_combat_bot')
 
 DELETE FROM aggregatevalues WHERE definition = @targetDefinition
@@ -179,3 +184,5 @@ ELSE
 BEGIN
 	UPDATE aggregatevalues SET value = -10 WHERE definition = @targetDefinition AND field = @field
 END
+
+GO

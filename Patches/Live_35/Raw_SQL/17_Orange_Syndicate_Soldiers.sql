@@ -1,3 +1,8 @@
+-- 17_Orange_Syndicate_Soldiers.sql
+
+USE perpetuumsa;
+GO
+
 -- Perpetuum.AdminTool generated script
 -- Generated: 2026-05-06 07:18:00 UTC
 -- Author: devours@internet.ru
@@ -18,3 +23,5 @@ UPDATE npcflock SET behaviorType = 1 WHERE id = 8536
 ;
 
 COMMIT TRANSACTION;
+
+GO
